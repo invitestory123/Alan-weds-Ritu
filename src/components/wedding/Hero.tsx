@@ -1,5 +1,4 @@
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import { useRef } from "react";
 import { Aurora } from "@/components/Aurora";
 import { Petals } from "./Petals";
@@ -101,56 +100,22 @@ export function Hero() {
           </motion.p>
         </motion.div>
 
-        {/* Dual Arched Portraits of Alan & Ritu */}
+        {/* Couple Hero Cutout */}
         <motion.div
-          initial={{ opacity: 0, y: 40, scale: 0.96 }}
+          initial={{ opacity: 0, y: 40, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 0.7, duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ delay: 0.7, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           style={{ y: coupleY, scale: coupleScale }}
-          className="mt-auto mb-4 sm:mb-6 flex items-center justify-center gap-3 sm:gap-4 w-[92%] max-w-[360px]"
+          className="mt-6 -mb-1 relative z-10 w-full flex justify-center items-end"
         >
-          <div className="relative group">
-            <div className="border-gold/50 shadow-gold relative h-36 w-28 sm:h-44 sm:w-32 overflow-hidden rounded-t-full border-2 bg-gradient-to-b from-gold/20 to-transparent p-1 backdrop-blur-xs">
-              <img
-                src={wedding.groom.image}
-                alt={wedding.groom.fullName}
-                className="h-full w-full rounded-t-full object-cover object-top"
-              />
-            </div>
-            <span className="text-gold/90 font-display absolute -bottom-3 left-1/2 -translate-x-1/2 bg-emerald-ink/90 border-gold/30 rounded-full border px-2.5 sm:px-3 py-0.5 text-[0.6rem] sm:text-[0.65rem] tracking-wider uppercase backdrop-blur-sm whitespace-nowrap">
-              {wedding.groom.name}
-            </span>
-          </div>
-
-          <span className="font-script text-gold text-xl sm:text-2xl font-light">&amp;</span>
-
-          <div className="relative group">
-            <div className="border-gold/50 shadow-gold relative h-36 w-28 sm:h-44 sm:w-32 overflow-hidden rounded-t-full border-2 bg-gradient-to-b from-gold/20 to-transparent p-1 backdrop-blur-xs">
-              <img
-                src={wedding.bride.image}
-                alt={wedding.bride.fullName}
-                className="h-full w-full rounded-t-full object-cover object-top"
-              />
-            </div>
-            <span className="text-gold/90 font-display absolute -bottom-3 left-1/2 -translate-x-1/2 bg-emerald-ink/90 border-gold/30 rounded-full border px-2.5 sm:px-3 py-0.5 text-[0.6rem] sm:text-[0.65rem] tracking-wider uppercase backdrop-blur-sm whitespace-nowrap">
-              {wedding.bride.name}
-            </span>
-          </div>
+          <img
+            src="/images/couple-hero.png"
+            alt={`${wedding.groom.name} & ${wedding.bride.name}`}
+            className="w-[82%] sm:w-[75%] max-w-[340px] h-auto object-contain drop-shadow-[0_24px_45px_rgba(0,0,0,0.5)] pointer-events-none select-none"
+          />
         </motion.div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8 }}
-        style={{ opacity: textOpacity }}
-        className="text-gold/70 absolute bottom-4 z-20 flex flex-col items-center"
-      >
-        <span className="text-[0.55rem] tracking-[0.4em] uppercase">Scroll</span>
-        <motion.span animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 2 }}>
-          <ChevronDown className="h-4 w-4" />
-        </motion.span>
-      </motion.div>
     </section>
   );
 }
