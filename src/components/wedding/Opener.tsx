@@ -8,12 +8,19 @@ import { wedding } from "./data";
  * Full-screen "seal + curtain" opener. Tapping the wax seal splits the
  * gold curtains and reveals the invitation.
  */
-export function Opener({ onOpen }: { onOpen: () => void }) {
+export function Opener({
+  onOpen,
+  onStartOpen,
+}: {
+  onOpen: () => void;
+  onStartOpen?: () => void;
+}) {
   const [opening, setOpening] = useState(false);
 
   const open = () => {
     if (opening) return;
     setOpening(true);
+    onStartOpen?.();
     window.setTimeout(onOpen, 1500);
   };
 

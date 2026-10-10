@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Hero } from "@/components/wedding/Hero";
 import { Couple } from "@/components/wedding/Couple";
 import { Countdown } from "@/components/wedding/Countdown";
@@ -9,6 +9,7 @@ import { Footer } from "@/components/wedding/Footer";
 import { Opener } from "@/components/wedding/Opener";
 import { ScrollProgress } from "@/components/wedding/ScrollProgress";
 import { MusicPlayer } from "@/components/wedding/MusicPlayer";
+import { wedding } from "@/components/wedding/data";
 
 const title = "Alan & Ritu · 20 December 2026, Kottayam";
 const description =
@@ -35,6 +36,8 @@ export const Route = createFileRoute("/")({
 
 function Invitation() {
   const [opened, setOpened] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     document.body.style.overflow = opened ? "" : "hidden";
@@ -43,16 +46,64 @@ function Invitation() {
     };
   }, [opened]);
 
+  useEffect(() => {
+    const audio = new Audio(wedding.audioUrl || "/audio/wedding-music.mp3");
+    audio.loop = true;
+    audio.volume = 0.5;
+    audioRef.current = audio;
+
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+
+    audio.addEventListener("play", handlePlay);
+    audio.addEventListener("pause", handlePause);
+
+    return () => {
+      audio.removeEventListener("play", handlePlay);
+      audio.removeEventListener("pause", handlePause);
+      audio.pause();
+      audioRef.current = null;
+    };
+  }, []);
+
+  const startMusic = () => {
+    if (audioRef.current) {
+      audioRef.current
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch((err) => console.log("Audio autoplay prevented:", err));
+    }
+  };
+
+  const toggleMusic = () => {
+    if (!audioRef.current) return;
+    if (audioRef.current.paused) {
+      audioRef.current
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch((err) => console.log("Audio play error:", err));
+    } else {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    }
+  };
+
   return (
     <div className="bg-emerald-ink min-h-screen w-full flex justify-center items-center overflow-x-hidden">
       <AnimatePresence>
-        {!opened && <Opener key="opener" onOpen={() => setOpened(true)} />}
+        {!opened && (
+          <Opener
+            key="opener"
+            onStartOpen={startMusic}
+            onOpen={() => setOpened(true)}
+          />
+        )}
       </AnimatePresence>
 
       {opened && (
         <>
           <ScrollProgress />
-          <MusicPlayer autoPlay={true} />
+          <MusicPlayer isPlaying={isPlaying} onToggle={toggleMusic} />
         </>
       )}
 
@@ -71,4 +122,3 @@ function Invitation() {
     </div>
   );
 }
-
