@@ -82,13 +82,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "InviteStory" },
       { property: "og:title", content: "Alan & Ritu · Wedding Invitation | 20 December 2026" },
       { property: "og:description", content: "Together with their families, Alan Thankachan and Ritu Raju invite you to celebrate their wedding on 20 December 2026 at Nalukettu, Windsor Castle, Kottayam." },
-      { property: "og:image", content: "/images/groom.jpg" },
+      { property: "og:image", content: "/images/couple.jpg" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@invitestory.in" },
       { name: "twitter:title", content: "Alan & Ritu · Wedding Invitation | 20 December 2026" },
       { name: "twitter:description", content: "Together with their families, Alan Thankachan and Ritu Raju invite you to celebrate their wedding on 20 December 2026 at Nalukettu, Windsor Castle, Kottayam." },
-      { name: "twitter:image", content: "/images/groom.jpg" },
+      { name: "twitter:image", content: "/images/couple.jpg" },
 
     ],
     links: [

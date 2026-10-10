@@ -25,6 +25,7 @@ export const wedding = {
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=Nalukettu+Windsor+Castle+Kodimatha+Kottayam",
   },
+  coupleImage: "/images/couple.jpg",
   audioUrl: "/audio/wedding-music.mp3",
   youtubeId: "AVvzdbXfe5M",
   youtubeUrl: "https://youtube.com/shorts/AVvzdbXfe5M?si=NNfx-an0dmPPwZip",

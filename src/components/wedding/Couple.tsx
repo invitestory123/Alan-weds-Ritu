@@ -70,6 +70,27 @@ export function Couple() {
           </p>
         </Reveal>
 
+        {wedding.coupleImage && (
+          <Reveal className="mt-8 sm:mt-10">
+            <div className="relative mx-auto overflow-hidden rounded-[2rem] border-2 border-gold/40 shadow-2xl p-2 bg-gradient-to-b from-gold/30 via-gold/10 to-transparent backdrop-blur-xs max-w-[360px]">
+              <div className="relative overflow-hidden rounded-[1.6rem]">
+                <img
+                  src={wedding.coupleImage}
+                  alt={`${wedding.groom.name} & ${wedding.bride.name}`}
+                  loading="lazy"
+                  className="w-full h-auto object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-ink/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-3 inset-x-0 text-center pointer-events-none">
+                  <span className="font-display text-gold-foil text-lg sm:text-xl tracking-wider">
+                    {wedding.groom.name} &amp; {wedding.bride.name}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        )}
+
         <div className="mt-8 sm:mt-10 space-y-6 sm:space-y-8">
           <Parallax speed={20}>
             <Person person={wedding.groom} role="The Groom" />

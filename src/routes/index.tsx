@@ -14,7 +14,7 @@ import { wedding } from "@/components/wedding/data";
 const title = "Alan & Ritu · 20 December 2026, Kottayam";
 const description =
   "Together with their families, Alan Thankachan and Ritu Raju invite you to their wedding on 20 December 2026 at Nalukettu, Windsor Castle, Kottayam.";
-const ogImage = "/images/groom.jpg";
+const ogImage = "/images/couple.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
