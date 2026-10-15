@@ -11,7 +11,7 @@ function Person({
 }) {
   return (
     <Reveal className="relative">
-      <div className="bg-card/70 border-gold/30 shadow-luxe relative overflow-hidden rounded-[2rem] border p-5 sm:p-7 backdrop-blur-sm">
+      <div className="bg-card/70 border-gold/30 shadow-luxe relative overflow-hidden rounded-[2rem] border px-6 py-6 sm:px-8 sm:py-7 backdrop-blur-sm">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.07]"
           style={{
@@ -20,23 +20,11 @@ function Person({
           }}
         />
         <div className="relative flex flex-col items-center text-center">
-          <div className="from-gold/25 border-gold/40 relative h-36 w-36 sm:h-44 sm:w-44 overflow-hidden rounded-full border-2 bg-gradient-to-b to-transparent shadow-md p-1">
-            <img
-              src={person.image}
-              alt={person.fullName}
-              loading="lazy"
-              width={768}
-              height={896}
-              className="h-full w-full rounded-full object-cover object-top"
-            />
-          </div>
-          <span className="text-gold mt-4 sm:mt-5 text-[0.6rem] tracking-[0.45em] uppercase">
+          <span className="text-gold text-[0.6rem] tracking-[0.45em] uppercase">
             {role}
           </span>
-          <h3 className="text-primary mt-2 text-2xl sm:text-3xl font-light">{person.fullName}</h3>
+          <h3 className="text-primary mt-1.5 text-2xl sm:text-3xl font-light">{person.fullName}</h3>
           <p className="text-muted-foreground mt-1 text-xs tracking-wide">{person.line}</p>
-          <span className="rule-gold my-3 sm:my-4 w-20" />
-          <p className="text-foreground/75 text-xs sm:text-sm leading-relaxed">{person.note}</p>
         </div>
       </div>
     </Reveal>
@@ -69,6 +57,27 @@ export function Couple() {
             Seven vows, seven steps, and a lifetime of ordinary mornings made beautiful.
           </p>
         </Reveal>
+
+        {wedding.coupleImage && (
+          <Reveal className="mt-8 sm:mt-10">
+            <div className="relative mx-auto overflow-hidden rounded-[2rem] border-2 border-gold/40 shadow-2xl p-2 bg-gradient-to-b from-gold/30 via-gold/10 to-transparent backdrop-blur-xs max-w-[360px]">
+              <div className="relative overflow-hidden rounded-[1.6rem]">
+                <img
+                  src={wedding.coupleImage}
+                  alt={`${wedding.groom.name} & ${wedding.bride.name}`}
+                  loading="lazy"
+                  className="w-full h-auto object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-ink/70 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-3 inset-x-0 text-center pointer-events-none">
+                  <span className="font-display text-gold-foil text-lg sm:text-xl tracking-wider">
+                    {wedding.groom.name} &amp; {wedding.bride.name}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        )}
 
         <div className="mt-8 sm:mt-10 space-y-6 sm:space-y-8">
           <Parallax speed={20}>

@@ -16,8 +16,6 @@ export function Hero() {
   const garlandY = useTransform(smooth, [0, 1], ["0%", "38%"]);
   const textY = useTransform(smooth, [0, 1], ["0%", "80%"]);
   const textOpacity = useTransform(smooth, [0, 0.55], [1, 0]);
-  const coupleY = useTransform(smooth, [0, 1], ["0%", "-18%"]);
-  const coupleScale = useTransform(smooth, [0, 1], [1, 1.12]);
 
   return (
     <section
@@ -46,7 +44,7 @@ export function Hero() {
         className="pointer-events-none absolute -top-2 left-1/2 w-[135%] max-w-none -translate-x-1/2 opacity-90"
       />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-md flex-1 flex-col items-center px-4 sm:px-6 pt-20 sm:pt-28 md:pt-32 text-center">
+      <div className="relative z-10 mx-auto flex w-full max-w-md flex-1 flex-col justify-center items-center px-4 sm:px-6 pt-16 pb-20 text-center">
         <motion.div
           style={{ y: textY, opacity: textOpacity }}
           className="flex flex-col items-center"
@@ -99,23 +97,24 @@ export function Hero() {
             Kottayam, Kerala
           </motion.p>
         </motion.div>
-
-        {/* Couple Hero Cutout */}
-        <motion.div
-          initial={{ opacity: 0, y: 40, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 0.7, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          style={{ y: coupleY, scale: coupleScale }}
-          className="mt-6 -mb-1 relative z-10 w-full flex justify-center items-end"
-        >
-          <img
-            src="/images/couple-hero.png"
-            alt={`${wedding.groom.name} & ${wedding.bride.name}`}
-            className="w-[82%] sm:w-[75%] max-w-[340px] h-auto object-contain drop-shadow-[0_24px_45px_rgba(0,0,0,0.5)] pointer-events-none select-none"
-          />
-        </motion.div>
       </div>
 
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.6 }}
+        style={{ opacity: textOpacity }}
+        className="text-gold/70 absolute bottom-6 z-20 flex flex-col items-center gap-1.5 pointer-events-none"
+      >
+        <span className="text-[0.55rem] tracking-[0.4em] uppercase">Scroll</span>
+        <motion.div
+          animate={{ y: [0, 4, 0] }}
+          transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+          className="w-4 h-7 rounded-full border border-gold/40 flex justify-center pt-1"
+        >
+          <div className="w-1 h-1.5 bg-gold rounded-full" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

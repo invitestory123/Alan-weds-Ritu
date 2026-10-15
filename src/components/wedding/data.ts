@@ -18,15 +18,15 @@ export const wedding = {
   endISO: "2026-12-20T14:00:00+05:30",
   dateLabel: "Sunday, 20 December 2026",
   timeLabel: "9:30 AM onwards",
-  muhurthamLabel: "Muhurtham · 9:30 AM - 10:45 AM",
+  muhurthamLabel: "Muhurtham · Between 10:15 to 10:45",
   venue: {
     name: "Nalukettu, Windsor Castle",
     address: "Windsor Castle, Kodimatha, Kottayam, Kerala 686039",
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=Nalukettu+Windsor+Castle+Kodimatha+Kottayam",
   },
-  coupleImage: "/images/couple.jpg",
+  coupleImage: "/images/couple-art.png",
   audioUrl: "/audio/wedding-music.mp3",
-  youtubeId: "AVvzdbXfe5M",
-  youtubeUrl: "https://youtube.com/shorts/AVvzdbXfe5M?si=NNfx-an0dmPPwZip",
+  youtubeId: "MVp59-q8dmA",
+  youtubeUrl: "https://youtube.com/shorts/MVp59-q8dmA?si=4eJTpQTw8C0xCjxN",
 };

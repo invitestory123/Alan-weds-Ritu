@@ -39,8 +39,7 @@ export function Footer() {
             Come bless our beginning
           </p>
           <p className="text-ivory/70 mx-auto mt-4 sm:mt-5 max-w-sm text-xs sm:text-sm leading-relaxed">
-            Your presence is the only gift we ask for. Bring your laughter, your appetite
-            and your dancing shoes — we have saved a seat, and a story, for you.
+            Your presence is the only gift we ask for. Bring your laughter and your appetite. We've saved a seat for you.
           </p>
         </Reveal>
 
