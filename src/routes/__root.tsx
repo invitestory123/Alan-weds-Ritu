@@ -77,16 +77,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Alan & Ritu · Wedding Invitation | 20 December 2026" },
-      { name: "description", content: "Together with their families, Alan Thankachan and Ritu Raju invite you to celebrate their wedding on 20 December 2026 at Nalukettu, Windsor Castle, Kottayam." },
+      { title: "Ashwin & Hamsa · Wedding Invitation | 25 & 26 November 2026" },
+      { name: "description", content: "Together with their families, Ashwin N. C. and Hamsa H. V. invite you to celebrate their wedding on 25 & 26 November 2026 at Spectra Convention Centre, Mysore." },
       { name: "author", content: "InviteStory" },
-      { property: "og:title", content: "Alan & Ritu · Wedding Invitation | 20 December 2026" },
-      { property: "og:description", content: "Together with their families, Alan Thankachan and Ritu Raju invite you to celebrate their wedding on 20 December 2026 at Nalukettu, Windsor Castle, Kottayam." },
+      { property: "og:title", content: "Ashwin & Hamsa · Wedding Invitation | 25 & 26 November 2026" },
+      { property: "og:description", content: "Together with their families, Ashwin N. C. and Hamsa H. V. invite you to celebrate their wedding on 25 & 26 November 2026 at Spectra Convention Centre, Mysore." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@invitestory.in" },
-      { name: "twitter:title", content: "Alan & Ritu · Wedding Invitation | 20 December 2026" },
-      { name: "twitter:description", content: "Together with their families, Alan Thankachan and Ritu Raju invite you to celebrate their wedding on 20 December 2026 at Nalukettu, Windsor Castle, Kottayam." },
+      { name: "twitter:title", content: "Ashwin & Hamsa · Wedding Invitation | 25 & 26 November 2026" },
+      { name: "twitter:description", content: "Together with their families, Ashwin N. C. and Hamsa H. V. invite you to celebrate their wedding on 25 & 26 November 2026 at Spectra Convention Centre, Mysore." },
 
     ],
     links: [

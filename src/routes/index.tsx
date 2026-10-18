@@ -11,9 +11,9 @@ import { ScrollProgress } from "@/components/wedding/ScrollProgress";
 import { MusicPlayer } from "@/components/wedding/MusicPlayer";
 import { wedding } from "@/components/wedding/data";
 
-const title = "Alan & Ritu · 20 December 2026, Kottayam";
+const title = "Ashwin & Hamsa · 25 & 26 November 2026, Mysore";
 const description =
-  "Together with their families, Alan Thankachan and Ritu Raju invite you to their wedding on 20 December 2026 at Nalukettu, Windsor Castle, Kottayam.";
+  "Together with their families, Ashwin N. C. and Hamsa H. V. invite you to their wedding on 25 & 26 November 2026 at Spectra Convention Centre, Mysore.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

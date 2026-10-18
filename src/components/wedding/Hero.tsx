@@ -86,7 +86,7 @@ export function Hero() {
             transition={{ delay: 1.15, duration: 0.9 }}
             className="text-ivory/85 mt-4 sm:mt-5 text-xs sm:text-sm tracking-[0.3em] sm:tracking-[0.35em] uppercase"
           >
-            20 · 12 · 2026
+            25 &amp; 26 · 11 · 2026
           </motion.p>
           <motion.p
             initial={{ opacity: 0 }}
@@ -94,7 +94,7 @@ export function Hero() {
             transition={{ delay: 1.35, duration: 0.9 }}
             className="text-ivory/60 mt-2 text-[0.65rem] sm:text-[0.7rem] tracking-[0.25em] uppercase"
           >
-            Kottayam, Kerala
+            Mysore, Karnataka
           </motion.p>
         </motion.div>
       </div>
